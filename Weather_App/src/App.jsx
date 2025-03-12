@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import Weather from './Components/Weather'
 import axios from 'axios';
@@ -9,7 +10,7 @@ function App() {
   function handleCity(event) {
     setCity(event.target.value);
   }
-  const apiKey = "2duMLSEGoYYJduslMj+27g==i9kyT5HRPGsHx9Gy";
+  const apiKey = import.meta.env.VITE_APIKEY;
   async function handleWeather() {
     try {
       const [citi, country] = city.split(" ");
@@ -22,9 +23,9 @@ function App() {
       // API returns an array of results, take the first one
       if (response.data && response.data.length > 0) {
         const { latitude, longitude } = response.data[0];
-        
+        const apikey2 = import.meta.env.VITE_APIKEY2;
         const weatherResponse = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=e8f09ab477a4021933ef738c3a98f61f`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apikey2}`
         );
         
         setWeather(weatherResponse.data);
