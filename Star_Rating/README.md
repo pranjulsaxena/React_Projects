@@ -1,2 +1,2 @@
-## 🧵 Random Color Generator
-![Single Accordion](./src/assets/Screenshot.png)
+## 🧵 Star Rating
+![Star Rating Component](./Screenshot.png)
