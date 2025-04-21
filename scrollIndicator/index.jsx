@@ -58,7 +58,10 @@ function ScrollIndicator({ url }) {
     }
     return (
         <div className='flex flex-col items-center gap-y-8'>
-            <h1 className='text-6xl mt-7 font-bold'>Custom Scroll Indicator</h1>
+        <div className='w-full fixed'>
+            <h1 className='text-6xl  font-bold text-center bg-black text-white py-4'>Custom Scroll Indicator</h1>
+            <div className={`h-8  bg-amber-700 left-0 top-[130px] z-50 transition-all duration-200`} style={{ width: `${scrollPercentage}%` }} ></div>
+        </div>
             <div className='flex flex-col items-center gap-y-3'>{data && data.length > 0 ? data.map((item) => (<p className='text-2xl'>{item.title}</p>)) : null}</div>
         </div>
     )
