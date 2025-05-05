@@ -9,7 +9,7 @@ function Modal_popup() {
     return (
         <div className='w-full h-full flex  flex-col items-center'>
             <button onClick={handleClick} className='border px-1 py-1'>Open Modal Popup</button>
-            {modalPopup ? <Modal footer={"Customized Footer"} header={"Customized Header"} body={<div>Hello Sir</div>} /> : null}
+            {modalPopup ? <Modal footer={"Customized Footer"} header={"Customized Header"} body={<div>Customized Body</div>}  onClose={handleClick}/> : null}
         </div>
     )
 }
