@@ -31,44 +31,46 @@ function TicTacToe() {
       if (square[x] && square[x] === square[y] && square[x] === square[z]) {
         return square[x];
       }
-
     }
     return null;
   };
 
   const Restart = () => {
-    console.log("Restart");
     setSquare(Array(9).fill(""));
     setTurnX(false);
-  }
+    setStatus("");
+  };
 
   useEffect(() => {
     if (!getWinner(square) && square.every((item) => item !== "")) {
-      setStatus("This is draw!! . Press below button to restart game");
+      setStatus("It's a draw! Press the button to restart.");
     } else if (getWinner(square)) {
-      setStatus(`Winner is: ${getWinner(square)}`);
+      setStatus(`🎉 Winner: ${getWinner(square)}!`);
     } else {
-      setStatus(`Next Player is ${isTurnX ? "X" : "O"}`);
+      setStatus(`Next Turn: ${isTurnX ? "X" : "O"}`);
     }
   }, [square, isTurnX]);
 
   return (
-    <div className="min-h-screen w-screen flex  justify-center items-center">
-      <div className="flex flex-col justify-center items-center gap-y-10">
-        <div className="flex max-w-2xl flex-wrap">
-          {[...Array(9)].map((_, index) => (
-            <Square
-              key={index}
-              value={square[index]}
-              onClick={() => {
-                handleClick(index);
-              }}
-            />
-          ))}
-        </div>
-        <div className="font-bold text-3xl">{status}</div>
-        <div><button className="px-3 py-2 bg-blue-500 rounded-md text-white  text-xl cursor-pointer" onClick={() => { Restart() }}>Restart</button></div>
+    <div className="min-h-screen w-full flex flex-col justify-center items-center bg-gradient-to-br from-blue-100 to-indigo-200 p-6">
+      <h1 className="text-4xl font-bold text-indigo-800 mb-6">Tic Tac Toe</h1>
+
+      <div className="grid grid-cols-3 gap-3 bg-white p-4 rounded-lg shadow-md">
+        {square.map((val, index) => (
+          <Square key={index} value={val} onClick={() => handleClick(index)} />
+        ))}
       </div>
+
+      <div className="mt-6 text-2xl font-semibold text-indigo-900 text-center">
+        {status}
+      </div>
+
+      <button
+        className="mt-4 px-6 py-2 bg-indigo-600 text-white font-medium rounded hover:bg-indigo-700 transition"
+        onClick={Restart}
+      >
+        Restart Game
+      </button>
     </div>
   );
 }
@@ -76,8 +78,8 @@ function TicTacToe() {
 function Square({ onClick, value }) {
   return (
     <div
-      className="bg-gray-100 border w-45 h-45 cursor-pointer text-9xl flex justify-center items-center "
       onClick={onClick}
+      className="w-24 h-24 md:w-28 md:h-28 flex justify-center items-center text-4xl md:text-5xl font-bold text-indigo-800 border border-gray-300 bg-gray-100 hover:bg-indigo-100 cursor-pointer transition"
     >
       {value}
     </div>
