@@ -1,3 +1,3 @@
 ### 🖼️ Image Slider Demo
 
-![Image Slider Demo](./Demo.mp4)
+![Image Slider Demo](./Demo.gif)
