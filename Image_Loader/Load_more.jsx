@@ -43,20 +43,21 @@ function Load_more() {
 
   return (
     <div className="min-h-screen w-full">
-      <div className="flex flex-wrap  gap-4 p-2 w-full">
-        {Products.map((item, index) => (
-          <div className="w-[300px]  border-2 flex flex-col items-center">
-            <img
-              key={index}
-              className="rounded-sm object-cover"
-              src={item.thumbnail}
-              alt={item.title}
-            />
-            <p>{item.title}</p>
-          </div>
-        ))}
+      {Products.map((item, index) => (
+  <div
+    key={index}
+    className="w-40 border-2 flex flex-col items-center p-2 m-1"
+    style={{ minHeight: 150 }}
+  >
+    <img
+      src={item.thumbnail}
+      alt={item.title}
+      className="w-full h-24 object-contain mb-2"
+    />
+    <p className="text-center">{item.title}</p>
+  </div>
+))}
 
-      </div>
       <div className="flex items-center flex-col">
         <button disabled={disabled | Loading} className={`cursor-pointer disabled border-1 bg-blue-500 px-2 py-3 mt-4 rounded-lg font-bold ${disabled === true ? ' disabled:cursor-not-allowed bg-slate-600' : ''}`} onClick={LoadMore}>
           {Loading === true ? "Loading ..." : "Load more"}
