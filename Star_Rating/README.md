@@ -1,2 +1,2 @@
 ## 🧵 Star Rating
-![Star Rating Component](./Screenshot.png)
+![Star Rating Component](./demo.gif)
