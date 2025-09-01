@@ -1,3 +1,3 @@
 ## 🧵 QR generator
-![QR Code generator](./demo.png)
+![QR Code generator](./demo.gif)
 
