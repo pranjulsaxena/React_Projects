@@ -1,2 +1,2 @@
 ## 🧵 Random Color Generator
-![Random Color Generator](./screenshot.png)
+![Random Color Generator](./demo.gif)
