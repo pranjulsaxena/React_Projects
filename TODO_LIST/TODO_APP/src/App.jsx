@@ -1,36 +1,35 @@
 import { useState } from "react";
 
 function App() {
-  const [todos, setTodos] = useState([]);  // State to store todos
-  const [input, setInput] = useState("");  // State to store input field value
+  const [todos, setTodos] = useState([]);  
+  const [input, setInput] = useState("");  
 
-  // Function to handle adding a new todo
   const addTodo = () => {
-    if (input.trim() === "") return; // Prevent adding empty todos
+    if (input.trim() === "") return; 
 
     const newTodo = {
-      desc: input,               // Todo description
-      completed: false,          // Completion status
-      id: Date.now(),            // Unique ID for each todo
+      desc: input,               
+      completed: false,          
+      id: Date.now(),            
     };
 
-    // Update the todos state
+    
     setTodos([...todos, newTodo]);
-    setInput(""); // Clear the input field
+    setInput(""); 
   };
 
-  // Function to handle deleting a todo
+  
   const deleteTodo = (id) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(updatedTodos);  // Remove todo with the given id
+    setTodos(updatedTodos);  
   };
 
-  // Function to handle toggling completion status
+  
   const toggleComplete = (id) => {
     const updatedTodos = todos.map((todo) =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
-    setTodos(updatedTodos);  // Toggle the completion status of the todo
+    setTodos(updatedTodos);  
   };
 
   return (
