@@ -85,9 +85,9 @@ function Search() {
       <button className="w-full border rounded-md py-4 text-white bg-blue-500 cursor-pointer hover:bg-blue-600">
         Search
       </button>
-        <div className="absolute w-full left-0 mt-1 top-full z-10">{showdropdown && (
-          <Suggestions data={filteredUsers} handleClick={handleClick} />
-        )}</div>
+      <div className="absolute w-full left-0 mt-1 top-full z-10">{showdropdown && (
+        <Suggestions data={filteredUsers} handleClick={handleClick} />
+      )}</div>
     </div>
   );
 }
