@@ -1,5 +1,4 @@
-## 🧵 Single Selection Accordion
-![Single Accordion](./src/assets/Screenshot.png)
+## 🧵 Accordion
+![ Accordion](./demo.gif)
 
-## 🧩 Multiple Selection Accordion
-![Multiple Accordion](./src/assets/Screenshot2.png)
+
